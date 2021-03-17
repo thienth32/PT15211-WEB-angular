@@ -1,0 +1,14 @@
+<div class="container">
+    <p>hero list!</p>
+    <div class="row">
+        <div class="col-3" *ngFor="let hero of heroes">
+            <img [src]="hero.image" class="img-thumbnail">
+            <p>
+                <strong [innerHTML]="hero.name"></strong>
+            </p>
+            <ng-container *ngIf="hero.skills != undefined"> 
+                <span *ngFor="let ski of hero.skills" class="badge text-white bg-primary">{{ski.name}}</span> 
+            </ng-container>
+        </div>
+    </div>
+</div>
