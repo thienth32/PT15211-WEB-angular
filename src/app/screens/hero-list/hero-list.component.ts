@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Hero} from '../../models/hero';
 import {HEROES} from '../../mock-data/HEROES';
+import { Skill } from 'src/app/models/skill';
 
 @Component({
   selector: 'app-hero-list',
@@ -10,17 +11,58 @@ import {HEROES} from '../../mock-data/HEROES';
 export class HeroListComponent implements OnInit {
 
   heroes: Array<Hero> = HEROES;
+  formObject: Hero = {
+    id: 0,
+    name: "",
+    image: "",
+    skills: []
+  };
 
-  /**
-   * BTVN
-   * trong màn hình hero-list tạo dữ liệu MONSTER gồm các thông tin
-   * id, name, image, detail, spells (phép thuật)
-   * hiển thị danh sách thông tin của các quái vật ở bên dưới thông tin của các heroes
-   */
+  lstSkills: Array<Skill> = [
+    {
+      id: 1,
+      name: "PHP"
+    },
+    {
+      id: 2,
+      name: "javascript"
+    },
+    {
+      id: 3,
+      name: "HTML"
+    },
+    {
+      id: 4,
+      name: "CSS"
+    }
+  ];
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  submitHeroForm(event){
+    event.preventDefault();
+    this.formObject.id = Number(this.formObject.id);
+    this.heroes.push(this.formObject);
+    this.resetForm();
+  }
+
+  addSkill2FormObject(item: Skill){
+    let index = this.formObject.skills.indexOf(item);
+    if(index == -1){
+      this.formObject.skills.push(item);
+    }else{
+      this.formObject.skills = this.formObject.skills.filter(el => el != item);
+    }
+  }
+  resetForm(){
+    this.formObject = {
+      id: 0,
+      name: "",
+      image: "",
+      skills: []
+    };
+  }
 }
