@@ -7,15 +7,15 @@ export const HEROES: Array<Hero> = [
         skills: [
             {
                 id: 1,
-                name: "php"
+                name: "PHP"
             },
             {
                 id: 2,
-                name: "html"
+                name: "javascript"
             },
             {
                 id: 3,
-                name: "css"
+                name: "HTML"
             }
         ]
     },
@@ -25,8 +25,8 @@ export const HEROES: Array<Hero> = [
         image: "https://iap.poly.edu.vn/user/ph/PH12538.jpg",
         skills: [
             {
-                id: 4,
-                name: "javascript"
+                id: 1,
+                name: "PHP"
             }
         ]
     },

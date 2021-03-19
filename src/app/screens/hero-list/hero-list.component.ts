@@ -45,17 +45,41 @@ export class HeroListComponent implements OnInit {
   submitHeroForm(event){
     event.preventDefault();
     this.formObject.id = Number(this.formObject.id);
-    this.heroes.push(this.formObject);
+    let index = this.heroes.findIndex(el => el.id == this.formObject.id);
+    debugger;
+    if( index == -1){
+      this.heroes.push({ ...this.formObject});
+    }else{
+      this.heroes[index] = { ...this.formObject};
+    }
+    
     this.resetForm();
   }
 
-  addSkill2FormObject(item: Skill){
-    let index = this.formObject.skills.indexOf(item);
-    if(index == -1){
-      this.formObject.skills.push(item);
+  updateHero(hero: Hero){
+    this.formObject = { ...hero};
+  }
+
+  addSkill2FormObject(item: Skill, event){
+    let index = this.formObject.skills.findIndex(el => el.id == item.id);
+
+    if(event.target.checked == true){
+      if(index == -1){
+        this.formObject.skills.push(item);
+      }
     }else{
-      this.formObject.skills = this.formObject.skills.filter(el => el != item);
+      this.formObject.skills = [...this.formObject.skills].filter(el => el.id != item.id);
     }
+  }
+
+  setCheckedCheckbox(item: Skill){
+    
+    if(this.formObject.skills == undefined){
+      this.formObject.skills = [];
+    }
+    
+    let index = this.formObject.skills.findIndex(el => el.id == item.id );
+    return index != -1;
   }
   resetForm(){
     this.formObject = {

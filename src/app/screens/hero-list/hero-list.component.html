@@ -19,7 +19,8 @@
                     <div class="col-6" *ngFor="let item of lstSkills">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" 
-                                (click)="addSkill2FormObject(item)"
+                                (click)="addSkill2FormObject(item, $event)"
+                                [checked]="setCheckedCheckbox(item)" 
                                 id="checkbox-{{item.id}}">
                             <label class="form-check-label" for="checkbox-{{item.id}}">
                                 {{item.name}}
@@ -44,6 +45,10 @@
             <ng-container *ngIf="hero.skills != undefined"> 
                 <span *ngFor="let ski of hero.skills" class="badge text-white bg-primary">{{ski.name}}</span> 
             </ng-container>
+            <div class="text-center">
+                <button (click)="updateHero(hero)" class="btn btn-info">Update</button> 
+                <button class="btn btn-danger">Remove</button>
+            </div>
         </div>
     </div>
 </div>
