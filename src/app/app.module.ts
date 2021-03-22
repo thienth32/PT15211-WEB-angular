@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroListComponent } from './screens/hero-list/hero-list.component';
 import { HeroUnitComponent } from './components/hero-unit/hero-unit.component';
+import { HeroFormComponent } from './components/hero-form/hero-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroListComponent,
     HeroUnitComponent,
+    HeroFormComponent,
   ],
   imports: [
     BrowserModule,

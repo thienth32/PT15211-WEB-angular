@@ -9,10 +9,12 @@ import { Hero } from 'src/app/models/hero';
 export class HeroUnitComponent implements OnInit {
   @Input() heroData: Hero;
   @Output() delete = new EventEmitter<Hero>();
+  @Output() updateEvent = new EventEmitter<Hero>();
   constructor() { }
   ngOnInit(): void {
   }
   updateHero(){
+    this.updateEvent.emit(this.heroData);
   }
   removeHero(){
     let conf = confirm(`bạn có chắc chắn xóa hero:
@@ -21,5 +23,4 @@ export class HeroUnitComponent implements OnInit {
       this.delete.emit(this.heroData);
     }
   }
-
 }
