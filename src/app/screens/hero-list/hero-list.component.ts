@@ -81,6 +81,7 @@ export class HeroListComponent implements OnInit {
     let index = this.formObject.skills.findIndex(el => el.id == item.id );
     return index != -1;
   }
+
   resetForm(){
     this.formObject = {
       id: 0,
@@ -88,5 +89,9 @@ export class HeroListComponent implements OnInit {
       image: "",
       skills: []
     };
+  }
+
+  parentRemove(removeObject: Hero){
+    this.heroes = this.heroes.filter(item => item.id != removeObject.id);
   }
 }
