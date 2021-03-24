@@ -10,6 +10,9 @@ export class HeroUnitComponent implements OnInit {
   @Input() heroData: Hero;
   @Output() delete = new EventEmitter<Hero>();
   @Output() updateEvent = new EventEmitter<Hero>();
+  date = new Date();
+  money: Number = 984218000;
+  gender = 30;
   constructor() { }
   ngOnInit(): void {
   }

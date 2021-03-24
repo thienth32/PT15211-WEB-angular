@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { HeroListComponent } from './screens/hero-list/hero-list.component';
 import { HeroUnitComponent } from './components/hero-unit/hero-unit.component';
 import { HeroFormComponent } from './components/hero-form/hero-form.component';
+import { GenderPipePipe } from './pipes/gender-pipe.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { BookListComponent } from './screens/book-list/book-list.component';
 
 @NgModule({
   declarations: [
@@ -13,10 +16,13 @@ import { HeroFormComponent } from './components/hero-form/hero-form.component';
     HeroListComponent,
     HeroUnitComponent,
     HeroFormComponent,
+    GenderPipePipe,
+    BookListComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
