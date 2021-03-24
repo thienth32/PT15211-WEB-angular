@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, 
+        Input, Output, EventEmitter } from '@angular/core';
 import { Hero } from 'src/app/models/hero';
 import { Skill } from 'src/app/models/skill';
 
@@ -10,6 +11,7 @@ import { Skill } from 'src/app/models/skill';
 export class HeroFormComponent implements OnInit {
   @Input() formObject: Hero;
   
+  @Output() submitForm = new EventEmitter<Hero>();
   lstSkills: Array<Skill> = [
     {
       id: 1,
@@ -35,7 +37,7 @@ export class HeroFormComponent implements OnInit {
 
   submitHeroForm(event){
     event.preventDefault();
-    console.log(this.formObject);
+    this.submitForm.emit(this.formObject);
   }
 
   addSkill2FormObject(item: Skill, event){

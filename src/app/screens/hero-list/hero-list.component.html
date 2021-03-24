@@ -2,7 +2,9 @@
     <p>hero list!</p>
     <div class="row">
         <div class="col-6">
-            <hero-form [formObject]="updateObject"></hero-form>            
+            <hero-form 
+                (submitForm)="saveFormSubmit($event)"
+                [formObject]="updateObject"></hero-form>            
         </div>
     </div>
     <br>
