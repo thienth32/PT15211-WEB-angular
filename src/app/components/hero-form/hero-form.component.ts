@@ -8,18 +8,8 @@ import { Skill } from 'src/app/models/skill';
   styleUrls: ['./hero-form.component.css']
 })
 export class HeroFormComponent implements OnInit {
-  @Input() 
-  get formObject(): Hero { return this._formObject; }
-  set formObject(formObject: Hero) {
-    this._formObject = formObject != undefined ? formObject : this.resetForm();
-  }
-  private _formObject: Hero = {
-    id: 0,
-    name: "",
-    image: "",
-    skills: []
-  };
-
+  @Input() formObject: Hero;
+  
   lstSkills: Array<Skill> = [
     {
       id: 1,
@@ -50,14 +40,21 @@ export class HeroFormComponent implements OnInit {
 
   addSkill2FormObject(item: Skill, event){
     
+    if(event.target.checked == true){
+      let index = this.formObject.skills.findIndex(e => e.id == item.id);  
+      if(index == -1){
+        this.formObject.skills.push(item);
+      }
+    }else{
+      this.formObject.skills = this.formObject.skills.filter(e => e.id != item.id);
+    }
   }
 
   setCheckedCheckbox(item: Skill){
-    if(this._formObject.skills == undefined){
-      this._formObject.skills = [];
+    if(this.formObject.skills == undefined){
+      this.formObject.skills = [];
     }
-    
-    let index = this._formObject.skills.findIndex(el => el.id == item.id );
+    let index = this.formObject.skills.findIndex(el => el.id == item.id );
     return index != -1;
   }
 

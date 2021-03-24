@@ -10,7 +10,12 @@ import {HEROES} from '../../mock-data/HEROES';
 export class HeroListComponent implements OnInit {
 
   heroes: Array<Hero> = HEROES;
-  updateObject: Hero = new Hero();
+  updateObject: Hero = {
+    id: 0,
+    name: "",
+    image: "",
+    skills: []
+  };
   constructor() { }
 
   ngOnInit(): void {
