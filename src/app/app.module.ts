@@ -9,6 +9,7 @@ import { HeroFormComponent } from './components/hero-form/hero-form.component';
 import { GenderPipePipe } from './pipes/gender-pipe.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { BookListComponent } from './screens/book-list/book-list.component';
+import { BookDetailComponent } from './screens/book-detail/book-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { BookListComponent } from './screens/book-list/book-list.component';
     HeroFormComponent,
     GenderPipePipe,
     BookListComponent,
+    BookDetailComponent,
   ],
   imports: [
     BrowserModule,
