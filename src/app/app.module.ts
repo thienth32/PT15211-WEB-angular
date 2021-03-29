@@ -10,6 +10,8 @@ import { GenderPipePipe } from './pipes/gender-pipe.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { BookListComponent } from './screens/book-list/book-list.component';
 import { BookDetailComponent } from './screens/book-detail/book-detail.component';
+import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { BookDetailComponent } from './screens/book-detail/book-detail.component
     GenderPipePipe,
     BookListComponent,
     BookDetailComponent,
+    ClientLayoutComponent,
+    AdminLayoutComponent,
   ],
   imports: [
     BrowserModule,
