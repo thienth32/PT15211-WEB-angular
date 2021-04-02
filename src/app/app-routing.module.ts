@@ -23,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: "admin",
-    component: AdminLayoutComponent
+    component: AdminLayoutComponent,
   },
   {
     path: '**',

@@ -1,6 +1,13 @@
-<p>book-list works!</p>
-<div *ngFor="let b of books">
-    <p>
-        <a href="javascript:;" routerLink="/chi-tiet/{{b.id}}">{{b.title}}</a>
-    </p>
+<br>
+<div class="row">
+    <div class="col-4" *ngFor="let b of books">
+        <img [src]="b.image" class="img-thumbnail">
+        <h3>
+            <a href="javascript:;" routerLink="chi-tiet/{{b.id}}">{{b.title | titlecase}}</a>
+        </h3>
+        <p>Giá: {{b.price | currency: 'VND'}}</p>
+        <p>Tác giả: 
+            <a href="javascript:;" routerLink="tac-gia/{{b.author.id}}">{{b.author.name}}</a>
+        </p>
+    </div>
 </div>
