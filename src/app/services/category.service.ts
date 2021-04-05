@@ -10,6 +10,6 @@ export class CategoryService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any>{
-    return this.http.get<any>(this.API_URL);
+    return this.http.get<any>(`${this.API_URL}?_embed=books`);
   }
 }

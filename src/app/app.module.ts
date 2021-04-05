@@ -13,6 +13,8 @@ import { BookDetailComponent } from './screens/book-detail/book-detail.component
 import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './screens/admin/dashboard/dashboard.component';
+import { CateListComponent } from './screens/admin/cate-list/cate-list.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { FormsModule } from '@angular/forms';
     BookDetailComponent,
     ClientLayoutComponent,
     AdminLayoutComponent,
+    DashboardComponent,
+    CateListComponent,
   ],
   imports: [
     BrowserModule,
