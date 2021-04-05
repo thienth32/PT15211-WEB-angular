@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
 import { CateListComponent } from './screens/admin/cate-list/cate-list.component';
+import { CateNewComponent } from './screens/admin/cate-new/cate-new.component';
 import { DashboardComponent } from './screens/admin/dashboard/dashboard.component';
 import { BookDetailComponent } from './screens/book-detail/book-detail.component';
 import { BookListComponent } from './screens/book-list/book-list.component';
@@ -33,7 +34,11 @@ const routes: Routes = [
       },
       {
         path: "danh-muc",
-        component: CateListComponent
+        component: CateListComponent,
+      },
+      {
+        path: "danh-muc/new",
+        component: CateNewComponent
       }
     ]
   },

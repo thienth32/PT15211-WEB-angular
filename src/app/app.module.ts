@@ -12,9 +12,10 @@ import { BookListComponent } from './screens/book-list/book-list.component';
 import { BookDetailComponent } from './screens/book-detail/book-detail.component';
 import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './screens/admin/dashboard/dashboard.component';
 import { CateListComponent } from './screens/admin/cate-list/cate-list.component';
+import { CateNewComponent } from './screens/admin/cate-new/cate-new.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +30,14 @@ import { CateListComponent } from './screens/admin/cate-list/cate-list.component
     AdminLayoutComponent,
     DashboardComponent,
     CateListComponent,
+    CateNewComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
