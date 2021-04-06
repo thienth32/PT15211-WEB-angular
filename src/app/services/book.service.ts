@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin  } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -39,5 +39,13 @@ export class BookService {
   findById(id: string): Observable<any>{
     let requestUrl = `${this.bookApi}/${id}`;
     return this.http.get<any>(requestUrl);
+  }
+
+  removeMultiple(idList: any[]): Observable<any>{
+    let requestUrls = idList.map(
+      id => this.http.delete<any>(`${this.bookApi}/${id}`)
+    );
+    
+    return forkJoin(requestUrls);
   }
 }

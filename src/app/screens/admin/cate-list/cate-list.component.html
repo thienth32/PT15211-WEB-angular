@@ -16,7 +16,7 @@
             <td>
                 <a href="javascript:;" class="btn btn-info"
                 routerLink="/admin/danh-muc/edit/{{c.id}}">Sửa</a>
-                <a href="javascript:;" class="btn btn-danger">Xóa</a>
+                <a href="javascript:;" (click)="remove(c.id)" class="btn btn-danger">Xóa</a>
             </td>
         </tr>
     </tbody>

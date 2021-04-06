@@ -14,6 +14,16 @@ export class CategoryService {
     return this.http.get<Category[]>(`${this.API_URL}?_embed=books`);
   }
 
+  findById(id: any): Observable<Category>{
+    let requestUrl = `${this.API_URL}/${id}?_embed=books`;
+    return this.http.get<Category>(requestUrl);
+  }
+
+  remove(id: any): Observable<any>{
+    let requestUrl = `${this.API_URL}/${id}`;
+    return this.http.delete<any>(requestUrl);
+  }
+
   store(object: Category): Observable<Category>{
     return this.http.post<Category>(this.API_URL, object);
   }
