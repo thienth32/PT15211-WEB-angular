@@ -6,6 +6,7 @@ import { CateEditComponent } from './screens/admin/cate-edit/cate-edit.component
 import { CateListComponent } from './screens/admin/cate-list/cate-list.component';
 import { CateNewComponent } from './screens/admin/cate-new/cate-new.component';
 import { DashboardComponent } from './screens/admin/dashboard/dashboard.component';
+import { DemoUploadComponent } from './screens/admin/demo-upload/demo-upload.component';
 import { BookDetailComponent } from './screens/book-detail/book-detail.component';
 import { BookListComponent } from './screens/book-list/book-list.component';
 import { HeroListComponent } from './screens/hero-list/hero-list.component';
@@ -44,6 +45,10 @@ const routes: Routes = [
       {
         path: "danh-muc/edit/:id",
         component: CateEditComponent
+      },
+      {
+        path: "upload-firestore",
+        component: DemoUploadComponent
       }
     ]
   },

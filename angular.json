@@ -120,6 +120,10 @@
               "devServerTarget": "PT15211-WEB:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

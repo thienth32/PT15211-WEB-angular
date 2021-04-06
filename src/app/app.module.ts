@@ -17,6 +17,13 @@ import { DashboardComponent } from './screens/admin/dashboard/dashboard.componen
 import { CateListComponent } from './screens/admin/cate-list/cate-list.component';
 import { CateNewComponent } from './screens/admin/cate-new/cate-new.component';
 import { CateEditComponent } from './screens/admin/cate-edit/cate-edit.component';
+import { AngularFireModule } from '@angular/fire';
+import {
+  AngularFireStorageModule,
+  AngularFireStorageReference,
+} from "@angular/fire/storage";
+import { environment } from "../environments/environment";
+import { DemoUploadComponent } from './screens/admin/demo-upload/demo-upload.component';
 
 @NgModule({
   declarations: [
@@ -33,13 +40,16 @@ import { CateEditComponent } from './screens/admin/cate-edit/cate-edit.component
     CateListComponent,
     CateNewComponent,
     CateEditComponent,
+    DemoUploadComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
