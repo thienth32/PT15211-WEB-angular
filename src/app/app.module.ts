@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './screens/admin/dashboard/dashboard.component';
 import { CateListComponent } from './screens/admin/cate-list/cate-list.component';
 import { CateNewComponent } from './screens/admin/cate-new/cate-new.component';
+import { CateEditComponent } from './screens/admin/cate-edit/cate-edit.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CateNewComponent } from './screens/admin/cate-new/cate-new.component';
     DashboardComponent,
     CateListComponent,
     CateNewComponent,
+    CateEditComponent,
   ],
   imports: [
     BrowserModule,

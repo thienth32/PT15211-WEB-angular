@@ -27,4 +27,9 @@ export class CategoryService {
   store(object: Category): Observable<Category>{
     return this.http.post<Category>(this.API_URL, object);
   }
+
+  update(object: Category): Observable<any>{
+    let requestUrl = `${this.API_URL}/${object.id}`;
+    return this.http.put<any>(requestUrl, object);
+  }
 }

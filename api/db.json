@@ -2,15 +2,15 @@
   "categories": [
     {
       "id": 1,
-      "name": "sách kinh tế"
+      "name": "sách kinh tế 2"
     },
     {
-      "name": "Văn Hóa – Giáo Dục",
-      "id": 3
+      "id": 3,
+      "name": "Văn Hóa – Thể thao"
     },
     {
-      "name": "Dummies",
-      "id": 4
+      "id": 4,
+      "name": "Truyện ma"
     },
     {
       "name": "V-Buddhism",

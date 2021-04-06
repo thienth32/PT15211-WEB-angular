@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
+import { CateEditComponent } from './screens/admin/cate-edit/cate-edit.component';
 import { CateListComponent } from './screens/admin/cate-list/cate-list.component';
 import { CateNewComponent } from './screens/admin/cate-new/cate-new.component';
 import { DashboardComponent } from './screens/admin/dashboard/dashboard.component';
@@ -39,6 +40,10 @@ const routes: Routes = [
       {
         path: "danh-muc/new",
         component: CateNewComponent
+      },
+      {
+        path: "danh-muc/edit/:id",
+        component: CateEditComponent
       }
     ]
   },
