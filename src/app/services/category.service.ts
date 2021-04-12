@@ -32,4 +32,9 @@ export class CategoryService {
     let requestUrl = `${this.API_URL}/${object.id}`;
     return this.http.put<any>(requestUrl, object);
   }
+
+  uploadImage(fd){
+    let requestUrl = "http://localhost:8000/upload-img";
+    return this.http.post<any>(requestUrl, fd);
+  }
 }
